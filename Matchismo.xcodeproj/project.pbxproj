@@ -168,12 +168,12 @@
 		46FDB3C7186C57AA00CF376D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46FDB3C1186C577F00CF376D /* PlayingCard.h */,
-				46FDB3C2186C577F00CF376D /* PlayingCard.m */,
 				46FDB3B8186C570300CF376D /* Card.h */,
 				46FDB3B9186C570300CF376D /* Card.m */,
 				46FDB3BB186C572600CF376D /* Deck.h */,
 				46FDB3BC186C572600CF376D /* Deck.m */,
+				46FDB3C1186C577F00CF376D /* PlayingCard.h */,
+				46FDB3C2186C577F00CF376D /* PlayingCard.m */,
 				46FDB3C4186C579E00CF376D /* PlayingCardDeck.h */,
 				46FDB3C5186C579E00CF376D /* PlayingCardDeck.m */,
 			);
@@ -493,6 +493,7 @@
 				46FDB3B4186AF5CF00CF376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46FDB3B5186AF5CF00CF376D /* Build configuration list for PBXNativeTarget "MatchismoTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +502,7 @@
 				46FDB3B7186AF5CF00CF376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
