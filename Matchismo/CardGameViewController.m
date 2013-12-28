@@ -19,7 +19,7 @@
 @implementation CardGameViewController
 
 - (Deck *)cardDeck {
-    _cardDeck = [[PlayingCardDeck alloc] init];
+    if (!_cardDeck) _cardDeck = [[PlayingCardDeck alloc] init];
     return _cardDeck;
 }
 
@@ -33,7 +33,11 @@
         UIImage *cardImage = [UIImage imageNamed:@"cardfront"];
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
         Card *randomCard = [self.cardDeck drawRandomCard];
-        [sender setTitle:randomCard.contents forState:UIControlStateNormal];
+        if (randomCard) {
+            [sender setTitle:randomCard.contents forState:UIControlStateNormal];
+        } else {
+            [sender setTitle:@"Empty" forState:UIControlStateNormal];
+        }
         
     } else {
         UIImage *cardImage = [UIImage imageNamed:@"cardback"];
