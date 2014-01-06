@@ -41,7 +41,6 @@
         randomCard = self.cards[index];
     }
     [self.cards removeObject:randomCard];
-    NSLog(@"%d\n", self.cards.count);
     return randomCard;
 }
 
