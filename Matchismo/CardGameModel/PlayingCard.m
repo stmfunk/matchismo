@@ -21,7 +21,6 @@
         }
     } else if ([otherCards count] == 2) {
         score = [self match:@[[otherCards firstObject]]] + [self match:@[[otherCards lastObject]]];
-        NSLog(@"%d", score);
     }
     
     return score;

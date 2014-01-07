@@ -55,7 +55,6 @@ static const int COST_TO_CHOOSE = 1;
     NSMutableArray *chosenCards = [[NSMutableArray alloc] init];
     if (!card.isMatched) {
         if (card.isChosen) {
-            NSLog(@"yes");
             card.chosen = NO;
         } else {
             // match against other cards
