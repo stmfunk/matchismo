@@ -13,6 +13,7 @@
 @interface CardGameViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *modeButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 - (NSString *)titleForCard:(Card *)card;
@@ -36,13 +37,19 @@
 }
 
 - (IBAction)redealCards:(id)sender {
-    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    NSInteger gameMode = self.game.gameMode;
+    self.game = [[CardMatchingGame alloc]
+                 initWithCardCount:[self.cardButtons count]
+                 usingDeck:[self createDeck]];
+    self.game.gameMode = gameMode;
+    self.modeButton.enabled = YES;
     [self updateUI];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
+    self.modeButton.enabled = NO;
     [self updateUI];
 }
 

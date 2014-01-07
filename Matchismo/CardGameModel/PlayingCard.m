@@ -20,7 +20,8 @@
             score = 1;
         }
     } else if ([otherCards count] == 2) {
-        score = 1;
+        score = [self match:@[[otherCards firstObject]]] + [self match:@[[otherCards lastObject]]];
+        NSLog(@"%d", score);
     }
     
     return score;
