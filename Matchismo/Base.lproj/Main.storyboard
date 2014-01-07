@@ -28,22 +28,18 @@
                                     <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y3N-tv-87q"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flops: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aJ-Lf-xiA">
-                                <rect key="frame" x="20" y="527" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tdO-KM-0J2">
-                                <rect key="frame" x="20" y="20" width="123" height="29"/>
+                                <rect key="frame" x="20" y="20" width="187" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="2 Card Mode"/>
+                                    <segment title="3 Card Mode"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="touchGameMode:" destination="vXZ-lx-hvc" eventType="valueChanged" id="KN5-EJ-ddc"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGD-I4-OOZ">
                                 <rect key="frame" x="93" y="56" width="66" height="91"/>
@@ -177,16 +173,44 @@
                                     <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kAT-0l-PG5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bam-bH-C6b">
+                                <rect key="frame" x="20" y="527" width="287" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLC-BV-tAz">
+                                <rect key="frame" x="112" y="404" width="103" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Redeal">
+                                    <color key="titleColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="redealCards:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zjM-bC-9Nk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="flipsLabel" destination="8aJ-Lf-xiA" id="ejM-6a-coU"/>
+                        <outlet property="scoreLabel" destination="Bam-bH-C6b" id="idD-yM-dlV"/>
+                        <outletCollection property="cardButtons" destination="AvP-NW-TcV" id="wxo-eg-Hj4"/>
+                        <outletCollection property="cardButtons" destination="WGD-I4-OOZ" id="4Lr-fH-9Ry"/>
+                        <outletCollection property="cardButtons" destination="4vG-62-bHF" id="oyL-dA-mbx"/>
+                        <outletCollection property="cardButtons" destination="lpv-Qx-IIc" id="iUu-hj-S4C"/>
+                        <outletCollection property="cardButtons" destination="LH9-y5-WtO" id="aDC-dh-wgJ"/>
+                        <outletCollection property="cardButtons" destination="pVb-gu-r3t" id="5oD-KO-LTT"/>
+                        <outletCollection property="cardButtons" destination="V7I-J0-bj1" id="apf-YR-sNF"/>
+                        <outletCollection property="cardButtons" destination="KD7-24-D5K" id="Ovg-V7-wwi"/>
+                        <outletCollection property="cardButtons" destination="dav-uF-hpf" id="90Y-Ey-9ax"/>
+                        <outletCollection property="cardButtons" destination="2Sf-e9-lWs" id="L4X-B5-BrV"/>
+                        <outletCollection property="cardButtons" destination="EgT-fD-4qb" id="mFd-Jg-lg6"/>
+                        <outletCollection property="cardButtons" destination="88a-9m-uhn" id="EwF-Qx-cWG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="24"/>
+            <point key="canvasLocation" x="67" y="-32"/>
         </scene>
     </scenes>
     <resources>
