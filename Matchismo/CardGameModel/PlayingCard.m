@@ -19,6 +19,8 @@
         } else if ([otherCard.suit isEqualToString:self.suit]) {
             score = 1;
         }
+    } else if ([otherCards count] == 2) {
+        score = 1;
     }
     
     return score;
