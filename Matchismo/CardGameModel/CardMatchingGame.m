@@ -63,7 +63,6 @@ static const int COST_TO_CHOOSE = 1;
                     [chosenCards addObject:otherCard];
                     if ((self.gameMode-1) == [chosenCards count])  {
                         NSUInteger matchScore = [card match:chosenCards];
-                        NSLog(@"%d", matchScore);
                         if (matchScore) {
                             self.score += matchScore * MATCH_BONUS;
                             for (Card *chosenCard in chosenCards) chosenCard.matched = YES;

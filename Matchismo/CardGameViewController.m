@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentaryLabel;
 
 - (NSString *)titleForCard:(Card *)card;
 - (UIImage *)backgroundImageForCard:(Card *)card;
@@ -43,6 +44,7 @@
                  usingDeck:[self createDeck]];
     self.game.gameMode = gameMode;
     self.modeButton.enabled = YES;
+    self.commentaryLabel.text = @"Pick a card!";
     [self updateUI];
 }
 
@@ -64,7 +66,6 @@
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }
-    
 }
 
 - (NSString *)titleForCard:(Card *)card {
