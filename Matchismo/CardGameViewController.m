@@ -112,11 +112,10 @@
         [cardsToMatch removeObject:cardToMatch];
         int match = [cardToMatch match:cardsToMatch];
         int scoreChange = self.game.score - self.lastScore;
-        NSLog(@"%d, %d", match, [cardsToMatch count]);
         if (match) {
             self.commentaryLabel.text = [NSString stringWithFormat:@"Matched %@ for %d points!", matchedCardsString, scoreChange];
         } else {
-            self.commentaryLabel.text = [NSString stringWithFormat:@"%@ don't match! %d point penalty!", matchedCardsString, scoreChange];
+            self.commentaryLabel.text = [NSString stringWithFormat:@"%@ don't match!\n%d point penalty!", matchedCardsString, scoreChange];
         }
         id button = [self.cardButtonQueue lastObject];
         [self.cardButtonQueue removeAllObjects];
