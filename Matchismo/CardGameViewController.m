@@ -7,14 +7,11 @@
 //
 
 #import "CardGameViewController.h"
-#import "PlayingCardDeck.h"
-#import "PlayingCard.h"
 #import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *modeButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentaryLabel;
 @property (strong, nonatomic) NSMutableArray *cardButtonQueue;
@@ -58,8 +55,8 @@
                          usingDeck:[self createDeck]];
     return _game;
 }
-- (Deck *)createDeck {
-    return [[PlayingCardDeck alloc] init];
+- (Deck *)createDeck { // abstract
+    return nil;
 }
 
 - (IBAction)redealCards:(id)sender {
@@ -69,7 +66,6 @@
                  initWithCardCount:[self.cardButtons count]
                  usingDeck:[self createDeck]];
     self.game.gameMode = gameMode;
-    self.modeButton.enabled = YES;
     self.commentaryLabel.text = @"Pick a card!";
     [self updateUI];
 }
@@ -83,7 +79,6 @@
     else [self.cardButtonQueue removeObject:sender];
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
-    self.modeButton.enabled = NO;
     [self updateUI];
 }
 
