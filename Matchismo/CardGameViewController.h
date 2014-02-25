@@ -12,6 +12,8 @@
 
 @interface CardGameViewController : UIViewController
 
+@property (nonatomic) NSInteger gameMode;
+
 // protected
 - (Deck *)createDeck; // abstract
 

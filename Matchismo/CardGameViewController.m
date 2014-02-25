@@ -24,6 +24,10 @@
 
 @implementation CardGameViewController
 
+- (void)gameMode:(NSInteger)mode {
+    self.game.gameMode = mode;
+}
+
 - (NSInteger)lastScore {
     if (!_lastScore) _lastScore = 0;
     return _lastScore;
@@ -43,10 +47,6 @@
             self.cardButtonQueue[i] = self.cardButtonQueue[i+1];
     }
     self.cardButtonQueue[i] = button;
-}
-
-- (IBAction)touchGameMode:(id)sender {
-    self.game.gameMode = [sender selectedSegmentIndex] ? 3 : 2;
 }
 
 - (CardMatchingGame *)game {
